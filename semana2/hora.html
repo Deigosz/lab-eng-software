@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora Atual</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Fira Code', monospace;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="horaAtual"></div>
+
+    <script>
+        function mostrarHora() {
+            const divHoraAtual = document.getElementById("horaAtual");
+            const atualizarHora = () => {
+                const data = new Date();
+                const horas = String(data.getHours()).padStart(2, '0');
+                const minutos = String(data.getMinutes()).padStart(2, '0');
+                const segundos = String(data.getSeconds()).padStart(2, '0');
+                const horaFormatada = `${horas}:${minutos}:${segundos}`;
+                divHoraAtual.textContent = horaFormatada;
+            };
+
+            setInterval(atualizarHora, 1000);
+            atualizarHora();
+        }
+
+        mostrarHora();
+    </script>
+</body>
+</html>

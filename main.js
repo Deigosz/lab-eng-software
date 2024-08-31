@@ -60,3 +60,4 @@ function verificarTipoDado() {
         document.body.innerHTML += "<p>Obrigado por visitar esta página.</p>";
     }
 }
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Palíndromo</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Fira Code', monospace;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 1.5rem;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        input[type="text"], button {
+            font-size: 1rem;
+            padding: 10px;
+            margin-top: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #003366;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0055a3;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputPalindrome" placeholder="Digite uma palavra">
+    <button onclick="verificarPalindromo()">Verificar Palíndromo</button>
+    
+    <div id="resultadoPalindromo"></div>
+
+    <script>
+        function verificarPalindromo() {
+            const input = document.getElementById('inputPalindrome').value;
+            const palavraNormalizada = input.replace(/[\W_]/g, '').toLowerCase();
+            const palavraInvertida = palavraNormalizada.split('').reverse().join('');
+
+            const resultado = palavraNormalizada && palavraNormalizada === palavraInvertida
+                ? "É um Palíndromo!"
+                : "Não é um Palíndromo.";
+            
+            document.getElementById('resultadoPalindromo').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

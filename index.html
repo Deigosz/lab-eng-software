@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividades de JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Atividades de JavaScript</h1>
+
+    <h2>Semana 01</h2>
     <ul>
-        <li><button onclick="verificarParOuImpar()">Exercício 1: Verificar Par ou Ímpar</button></li>
-        <li><button onclick="verificarPrimo()">Exercício 2: Verificar Número Primo</button></li>
-        <li><button onclick="calcularFatorial()">Exercício 3: Calcular Fatorial</button></li>
-        <li><button onclick="verificarTipoDado()">Exercício 4: Verificar Tipo de Dado</button></li>
+        <li><button onclick="verificarParOuImpar()">Verificar Par ou Ímpar</button></li>
+        <li><button onclick="verificarPrimo()">Verificar Número Primo</button></li>
+        <li><button onclick="calcularFatorial()">Calcular Fatorial</button></li>
+        <li><button onclick="verificarTipoDado()">Verificar Tipo de Dado</button></li>
     </ul>
 
-    <script src="main.js"></script>
+    <h2>Semana 02</h2>
+    <ul>
+        <li><button onclick="window.location.href='semana2/data.html'">Mostrar Data Atual</button></li>
+        <li><button onclick="window.location.href='semana2/hora.html'">Mostrar Hora Atual</button></li>
+        <li><button onclick="window.location.href='semana2/palindromo.html'">Verificar Palíndromo</button></li>
+    </ul>
+    
+
+    <script>
+        function redirecionarPalindromo() {
+            const palavra = document.getElementById('inputPalindrome').value;
+            if (palavra) {
+                window.location.href = `palindromo.html?palavra=${encodeURIComponent(palavra)}`;
+            } else {
+                alert('Por favor, digite uma palavra.');
+            }
+        }
+    </script>
 </body>
 </html>
